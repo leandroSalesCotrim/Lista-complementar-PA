@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Exercicio3 {
+
+	public static void main(String[] args) {
+		
+		Scanner user= new Scanner(System.in);
+		int j=0;
+		int[] a = new int [10];
+		for (int i=0; i<a.length;i++){
+			System.out.println("Insira um número para a "+(i+1)+"°" +" posição:");
+			a [i]= user.nextInt();
+		}
+		boolean p;
+		for (int i=0; i<a.length;i++){
+			 p = true;
+			
+			for ( j = 2; j<a[i]; ) {
+				if (a[i] % j==0)
+					p = false;
+				break;
+			}
+			
+			if (p) {
+				System.out.println("O número "+a[i]+ " é primo");
+			}else {
+				System.out.println("O número "+a[i]+ " não é primo");
+			}
+
+			user.close();
+		}
+	}
+}
